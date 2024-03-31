@@ -1,6 +1,6 @@
 <div class="hero min-h-screen bg-base-200">
   <div
-    class="hero-content flex-col lg:flex-row gap-16 rounded-md bg-[#ffff] p-6"
+    class="hero-content flex-col lg:flex-row gap-16 rounded-md bg-[#ffff] p-6 shadow-sm"
   >
     <div class="text-center lg:text-center">
       <h1
@@ -12,69 +12,156 @@
     <div
       class="card shrink-0 w-full max-w-md shadow-2xl bg-base-100 order-2 lg:order-0"
     >
-      <form class="card-body">
+      <form
+        class="card-body"
+        [formGroup]="registerForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <!-- Company Name -->
         <div class="form-control">
           <label class="label">
-            <span class="label-text text-[16px]">Company Name</span>
+            <span class="label-text text-[15px]">Company Name</span>
           </label>
+
+          <!-- autofocus -->
           <input
+            formControlName="companyName"
             type="text"
             placeholder="Enter company name"
-            class="input input-bordered text-[15px] font-light"
-            required
+            class="input input-bordered text-[14px] font-light"
           />
-        </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text text-[16px]">Employee Name</span>
-          </label>
-          <input
-            type="text"
-            placeholder=" Enter employee name"
-            class="input input-bordered text-[15px] font-light"
-            required
-          />
-        </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text text-[16px]">ID Number</span>
-          </label>
-          <input
-            type="number"
-            placeholder="Enter id number"
-            class="input input-bordered text-[15px] font-light"
-            required
-          />
-        </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text text-[16px]">Date of Birth</span>
-          </label>
-          <input
-            type="date"
-            placeholder="DOB"
-            class="input input-bordered text-[15px] font-light"
-            required
-          />
-        </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text text-[16px]">Email</span>
-          </label>
-          <input
-            type="email"
-            placeholder="Enter email"
-            class="input input-bordered text-[15px] font-light"
-            required
-          />
+
+          <div
+            class="text-red-lighter text-start text-[13px] font-bold"
+            *ngIf=" (registerForm.get('companyName')?.touched || submitted) &&
+            registerForm.get('companyName')?.errors?.['required']"
+          >
+            company name is required!
+          </div>
+          <div
+            class="text-red-lighter text-start text-[13px] font-bold"
+            *ngIf=" (registerForm.get('companyName')?.touched || submitted) &&
+            registerForm.get('companyName')?.errors?.['pattern']"
+          >
+            only alphapetic charcters are allowed!
+          </div>
+          <div
+            class="text-red-lighter text-start text-[13px] font-bold"
+            *ngIf=" (registerForm.get('companyName')?.touched || submitted) &&
+            registerForm.get('companyName')?.errors?.['minlength']"
+          >
+            company name must be at least 5 characters!
+          </div>
         </div>
 
+        <!-- Employee Name -->
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text text-[15px]">Employee Name</span>
+          </label>
+          <input
+            formControlName="employeeName"
+            type="text"
+            placeholder="Enter employee name"
+            class="input input-bordered text-[14px] font-light"
+          />
+          <div
+            class="text-red-lighter text-start text-[13px] font-bold"
+            *ngIf=" (registerForm.get('employeeName')?.touched || submitted) &&
+            registerForm.get('employeeName')?.errors?.['required']"
+          >
+            employee name is required
+          </div>
+          <div
+            class="text-red-lighter text-start text-[13px] font-bold"
+            *ngIf=" (registerForm.get('employeeName')?.touched || submitted) &&
+          registerForm.get('employeeName')?.errors?.['pattern']"
+          >
+            only alphapetic charcters are allowed!
+          </div>
+          <div
+            class="text-red-lighter text-start text-[13px] font-bold"
+            *ngIf=" (registerForm.get('employeeName')?.touched || submitted) &&
+          registerForm.get('employeeName')?.errors?.['minlength']"
+          >
+            employee name must be at least 5 characters!
+          </div>
+        </div>
+
+        <!-- ID Number -->
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text text-[15px]">ID Number</span>
+          </label>
+          <input
+            formControlName="idNumber"
+            type="number"
+            placeholder="Enter id number"
+            class="input input-bordered text-[14px] font-light"
+          />
+          <div
+            class="text-red-lighter text-start text-[13px] font-bold"
+            *ngIf=" (registerForm.get('idNumber')?.touched || submitted) &&
+            registerForm.get('idNumber')?.errors?.['required']"
+          >
+            id number is required!
+          </div>
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text text-[15px]">Date of Birth</span>
+          </label>
+          <input
+            formControlName="dateOfBirth"
+            type="date"
+            placeholder="DOB"
+            class="input input-bordered text-[14px] font-light"
+          />
+          <div
+            class="text-red-lighter text-start text-[13px] font-bold"
+            *ngIf=" (registerForm.get('dateOfBirth')?.touched || submitted) &&
+            registerForm.get('dateOfBirth')?.errors?.['required']"
+          >
+            date of birth is required!
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text text-[15px]">Email</span>
+          </label>
+          <input
+            formControlName="email"
+            type="email"
+            placeholder="Enter email"
+            class="input input-bordered text-[14px] font-light"
+          />
+          <div
+            class="text-red-lighter text-start text-[13px] font-bold"
+            *ngIf=" (registerForm.get('email')?.touched || submitted) &&
+            registerForm.get('email')?.errors?.['required']"
+          >
+            email is required
+          </div>
+          <div
+            class="text-red-lighter text-start text-[13px] font-bold"
+            *ngIf=" (registerForm.get('email')?.touched || submitted) &&
+            registerForm.get('email')?.errors?.['email']"
+          >
+            please enter a valid email address!
+          </div>
+        </div>
+
+        <!-- Submit Button -->
         <div class="form-control mt-6">
           <!-- <button
-            class="btn text-[15px] border-none bg-red-dark hover:bg-red-lighter capitalize text-[#fff]"
-          >
-            submit
-          </button> -->
+                class="btn text-[15px] border-none bg-red-dark hover:bg-red-lighter capitalize text-[#fff]"
+            >
+                submit
+            </button> -->
           <button class="btn text-[15px] btn-primary capitalize text-[#fff]">
             submit
           </button>
