@@ -27,7 +27,6 @@ export class FormComponent implements OnInit {
         [
           Validators.required,
           Validators.pattern('[a-zA-Z ]*'),
-          Validators.minLength(5),
         ],
       ],
       employeeName: [
@@ -35,7 +34,6 @@ export class FormComponent implements OnInit {
         [
           Validators.required,
           Validators.pattern('[a-zA-Z ]*'),
-          Validators.minLength(5),
         ],
       ],
       idNumber: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
