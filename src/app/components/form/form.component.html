@@ -2,12 +2,12 @@
   <div class="hero-content w-full flex flex-col gap-10">
     <div class="text-center lg:text-center">
       <h1
-        class="text-3xl text-gray-800 font-bold leading-[45px] font-poppins tracking-wider"
+        class="text-xl md:text-2xl lg:text-3xl text-gray-800 font-bold leading-[45px] font-poppins tracking-wider"
       >
-        Build your own card!
+        Build your own <span class="text-primary">Card!</span>
       </h1>
     </div>
-    <div class="card w-full md:max-w-xl shadow-2xl bg-base-100">
+    <div class="card w-full max-w-xl shadow-2xl bg-base-100">
       <form
         class="card-body"
         [formGroup]="registerForm"
@@ -160,11 +160,11 @@
         <!-- Submit Button -->
         <div class="form-control mt-6">
           <!-- <button
-                class="btn text-[15px] border-none bg-red-dark hover:bg-red-lighter capitalize text-[#fff]"
-            >
-                submit
-            </button> -->
-          <button class="btn text-[15px] btn-primary capitalize text-[#fff]">
+            class="btn text-[15px] border-none bg-red-dark hover:bg-red-lighter capitalize text-[#fff]"
+          >
+            submit
+          </button> -->
+          <button class="btn text-[15px] btn-primary capitalize text-white">
             submit
           </button>
         </div>
