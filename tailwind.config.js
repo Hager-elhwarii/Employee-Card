@@ -10,7 +10,7 @@ module.exports = {
         xl: "1440px",
       },
       colors: {
-        "red-dark": "#9f1f31",
+        "red-dark": "#f51b25",
         "red-lighter": "#cc2f45",
         "gray-dark": "#2a2a2b",
         "gray-light": "#d3dce6",

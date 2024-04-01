@@ -1,31 +1,34 @@
 <div
-  class="flex justify-center items-center h-screen border-4 border-black"
+  class="flex justify-center items-center h-screen"
   (click)="toggleFlip()"
   [@flipState]="flip"
 >
   <div class="flex">
     <!-- ? Card Forward Side-->
     <div
-      class="card w-[22rem] bg-base-100 shadow-2xl border-b-[18px] border-b-red-dark cursor-pointer card__forward overflow-hidden"
+      class="card w-[24rem] bg-base-100 shadow-2xl border-b-[18px] border-b-red-dark cursor-pointer card__forward overflow-hidden"
     >
       <div
         class="bg-gray-dark rounded-t-[1rem] py-4 -m-5 border-[18px] border-red-dark rounded-full"
       >
         <figure class="px-10 pt-10">
-          <img
+          <div class="overflow-hidden rounded-full border-8 border-red-dark">
+            <img
             src="https://profile-images.xing.com/images/67d0147185d90af82453e1fe2f49063b-5/erkan-yildirim.1024x1024.jpg"
             alt="Shoes"
-            class="rounded-full h-36 w-36 object-cover border-8 border-red-dark"
+            class="rounded-full h-32 w-32 object-cover  transition-transform duration-300 transform hover:scale-110"
           />
+          </div>
+          
         </figure>
         <div class="text-[#fff] uppercase py-6 tracking-wide font-poppins">
-          <h1 class="text-3xl tracking-widest">erkan yildirim</h1>
-          <p class="font-light text-[17px]">creative designer</p>
+          <h1 class="text-[28px]">chritian martin</h1>
+          <p class="font-light text-[16px] -mt-[6px]">creative designer</p>
         </div>
       </div>
-      <div class="card-body font-poppins">
-        <div>
-          <div class="flex justify-center gap-8 text-[17px] mb-6 mt-6">
+      <div class="card-body font-poppins flex justify-center">
+        <div class="flex flex-col gap-8">
+          <div class="flex justify-center gap-8 text-[17px]">
             <div class="text-start font-medium">
               <p class="uppercase">id no</p>
               <p class="uppercase">dob</p>
@@ -40,33 +43,35 @@
             </div>
           </div>
 
-          <img
-            class="object-cover w-48 max-h-10 mx-auto"
-            src="https://webstockreview.net/images/barcode-clipart-transparent-9.png"
-          />
-          <p
-            class="text-[12px] font-medium tracking-widest text-[#000] -mt-[4px]"
-          >
-            2346894578930245
-          </p>
+          <div>
+            <img
+              class="object-cover w-48 max-h-10 mx-auto"
+              src="https://webstockreview.net/images/barcode-clipart-transparent-9.png"
+            />
+            <p
+              class="text-[12px] font-medium tracking-widest text-[#000] -mt-[4px]"
+            >
+              2346894578930245
+            </p>
+          </div>
         </div>
       </div>
     </div>
     <!-- ? Card Backward Side-->
     <div
-      class="flex-none card w-[27rem] bg-base-100 shadow-2xl border-b-[18px] border-b-red-dark cursor-pointer card__backward"
+      class="card w-[24rem] bg-gray-dark shadow-2xl border-b-[18px]  border-b-red-dark cursor-pointer card__backward overflow-hidden "
     >
       <div
-        class="rounded-t-[1rem] border-b-[18px] border-b-red-dark curved-div py-10"
+        class="bg-white rounded-t-[1rem] -m-5  border-[18px] border-red-dark rounded-full py-[70px]"
       >
-        <img class="w-36 mx-auto" src="https://iili.io/JwEXS4e.png" />
+        <img class="w-36 mx-auto animate-pulse" src="https://iili.io/JwNVywF.png" />
         <div class="uppercase font-poppins">
-          <h1 class="text-3xl tracking-widest font-semibold">company name</h1>
-          <p class="font-light text-[17px] tracking-[0.6rem]">tagline here</p>
+          <h1 class="text-[28px] font-semibold">company name</h1>
+          <p class="font-normal text-[16px] tracking-[0.3rem] -mt-[6px]">tagline here</p>
         </div>
       </div>
 
-      <div class="card-body bg-gray-dark font-poppins text-[#fff]">
+      <div class="card-body font-poppins text-[#fff]">
         <h2
           class="card-title text-center tracking-wide mx-auto capitalize font-medium pb-4"
         >
@@ -92,11 +97,11 @@
 
         <div class="mx-auto text-start text-sm">
           <p>
-            <span class="text-red-lighter font-semibold">Date of Issue</span>:
+            <span class="text-red-dark font-semibold">Date of Issue</span>:
             10-03-2021
           </p>
           <p>
-            <span class="text-red-lighter font-semibold">Expire Date</span>:
+            <span class="text-red-dark font-semibold">Expire Date</span>:
             20-05-2022
           </p>
         </div>
