@@ -5,7 +5,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 @Component({
   selector: 'app-employee-card',
   standalone: true,
-  imports: [],
+  imports: [EmployeeCardComponent],
   templateUrl: './employee-card.component.html',
   styleUrl: './employee-card.component.css',
   animations: [

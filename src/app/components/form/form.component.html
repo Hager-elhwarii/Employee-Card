@@ -1,5 +1,6 @@
 <div class="hero min-h-screen">
-  <div class="hero-content w-full flex flex-col gap-10">
+
+  <div *ngIf="!submittedSuccessfully" class="hero-content w-full flex flex-col gap-10">
     <!-- Form Title -->
     <div class="text-center lg:text-center">
       <h1
@@ -172,5 +173,10 @@
         </div>
       </form>
     </div>
+  </div>
+
+  <div *ngIf="submittedSuccessfully">
+    <!-- Employee card component HTML code goes here -->
+    <app-employee-card></app-employee-card>
   </div>
 </div>
