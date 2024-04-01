@@ -11,14 +11,15 @@ import { EmployeeCardComponent } from '../employee-card/employee-card.component'
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule , EmployeeCardComponent],
+  imports: [ReactiveFormsModule, CommonModule, EmployeeCardComponent],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css',
 })
 export class FormComponent implements OnInit {
   protected registerForm!: FormGroup;
-  protected submitted : boolean = false;
-  submittedSuccessfully : boolean = false;
+  protected submitted: boolean = false;
+  protected submittedSuccessfully: boolean = false;
+  protected formData: any;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -40,10 +41,17 @@ export class FormComponent implements OnInit {
 
   protected onSubmit(): void {
     this.submitted = true;
+    console.log('innnn submit');
 
     if (this.registerForm.valid) {
+      console.log('form is valid');
+
       console.table(this.registerForm.value);
       this.submittedSuccessfully = true;
+   
+      this.formData = this.registerForm.value;
+      console.log(this.formData);
+      
     } else {
       console.log('form not valid');
     }
