@@ -1,3 +1,3 @@
-# Mindtorches-Task
-Front-End Developer Task :bulb: 
+# Employee Card :bulb: 
+Front-End Developer Task 
 
