@@ -31,6 +31,7 @@
           </label>
 
           <input
+            maxlength="15"
             formControlName="companyName"
             type="text"
             placeholder="Enter company name"
@@ -63,6 +64,7 @@
             >
           </label>
           <input
+            maxlength="15"
             formControlName="employeeName"
             type="text"
             placeholder="Enter employee name"
@@ -76,12 +78,13 @@
             >
               Employee name is required
             </div>
+
             <div
               class="text-red-dark text-start text-[13px] font-semibold"
               *ngIf=" (registerForm.get('employeeName')?.touched || submitted) &&
-            registerForm.get('employeeName')?.errors?.['pattern']"
+          registerForm.get('employeeName')?.errors?.['pattern']"
             >
-              Only alphapetic letters are allowed
+              only alphapetic characters are allowed
             </div>
           </div>
         </div>

@@ -3,6 +3,8 @@ import {
   FormGroup,
   ReactiveFormsModule,
   Validators,
+  AbstractControl,
+  ValidationErrors,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
@@ -38,7 +40,10 @@ export class FormComponent implements OnInit {
       ],
       employeeName: [
         '',
-        [Validators.required, Validators.pattern('[a-zA-Z ]*')],
+        [
+          Validators.required,
+          Validators.pattern('[a-zA-Z ]*'),
+        ],
       ],
       idNumber: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
       dateOfBirth: ['', Validators.required],
@@ -47,6 +52,8 @@ export class FormComponent implements OnInit {
   }
 
   protected onSubmit(): void {
+    console.log('in submit');
+    
     this.submitted = true;
     if (this.registerForm.valid) {
       this.submittedSuccessfully = true;
