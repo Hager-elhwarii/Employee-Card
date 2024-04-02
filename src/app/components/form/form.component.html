@@ -177,7 +177,11 @@
     </div>
   </div>
 
-  <div *ngIf="submittedSuccessfully">
+  <!-- Loader component -->
+  <div *ngIf="submittedSuccessfully && !imageLoaded">
+    <app-loader></app-loader>
+  </div>
+  <div *ngIf="submittedSuccessfully && imageLoaded">
     <!-- Employee card component -->
     <app-employee-card [formData]="formData"></app-employee-card>
   </div>

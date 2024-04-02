@@ -2,13 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-employee-card',
+  selector: 'app-test-card',
   standalone: true,
-  imports: [EmployeeCardComponent, CommonModule],
-  templateUrl: './employee-card.component.html',
-  styleUrl: './employee-card.component.css',
+  imports: [TestCardComponent, CommonModule],
+  templateUrl: './test-card.component.html',
+  styleUrl: './test-card.component.css',
 })
-export class EmployeeCardComponent implements OnInit {
+export class TestCardComponent implements OnInit {
   @Input() formData: any;
 
   imageUrls: string[] = [
