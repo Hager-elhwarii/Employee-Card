@@ -8,12 +8,16 @@
  - [Employee Card](https://employee-card.netlify.app/)
 
 ## 🔆 Objective 
-- Creating an interactive employee card application in Angular. Users will be able to input employee details via a form, and these details will be dynamically displayed on the `employee card`. The card will have two sides (forward and backward), and it will flip with a `smooth animation` when clicked, revealing additional information. 
+- Creating an interactive employee card application in Angular. Users will be able to input employee details via a form, and these details will be dynamically displayed on the `employee card`. The card will have two sides (forward and backward), and it will flip with a `smooth animation` when clicked, revealing additional information.
+
+  
 ## 📝 Features
 - Dynamic form inputs for company and employee details.
 - Interactive employee card UI with flip animation.
-- Smooth transition between forward and backward sides.
 - Responsive layout for various screen sizes.
+- Custom logo design created using Figma with animation.
+- Smooth transition animation between forward and backward sides.
+  
 
 ## 💻 Tech stack
 - Html
@@ -22,6 +26,7 @@
 - Angular
 - Tailwindcss
 - Daisyui
+- Figma
 
 ##  🔐 Run locally 
 
@@ -31,9 +36,9 @@ git clone https://github.com/Hager-elhwarii/Employee-Card-Task.git
 
 ## 📌 Acknowledgments
 
-- [Netlify](https://tailwindcss.com/)
-- [Flaticon](https://www.flaticon.com/)
+- [Figma](https://www.figma.com/?fuid=)
 - [Netlify](https://www.netlify.com/)
+- [Flaticon](https://www.flaticon.com/)
 - [Freeimage](https://freeimage.host/)
 - [Google Fonts](http://hager.a.elhawary@gmail.com/)
 
