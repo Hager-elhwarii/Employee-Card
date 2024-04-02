@@ -8,8 +8,7 @@
  - [Employee Card](https://employee-card.netlify.app/)
 
 ## 🔆 Objective 
-- Creating an interactive employee card application in Angular. Users will be able to input employee details via a form, and these details will be dynamically displayed on the `employee card`. The card will have two sides (forward and backward), and it will flip with a `smooth animation` when clicked, revealing additional information on the reverse side.
-
+- Creating an interactive employee card application in Angular. Users will be able to input employee details via a form, and these details will be dynamically displayed on the `employee card`. The card will have two sides (forward and backward), and it will flip with a `smooth animation` when clicked, revealing additional information. 
 ## 📝 Features
 - Dynamic form inputs for company and employee details.
 - Interactive employee card UI with flip animation.
