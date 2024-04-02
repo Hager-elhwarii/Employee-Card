@@ -4,7 +4,6 @@ import { EmployeeCardComponent } from './components/employee-card/employee-card.
 import { LoaderComponent } from './components/loader/loader.component';
 import { CommonModule } from '@angular/common';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -39,12 +38,10 @@ export class AppComponent implements OnInit {
       img.src = url;
 
       // Optional: Handle onload and onerror events
-      img.onload = () => {
-        console.log(`Image ${url} preloaded successfully.`);
-      };
+      img.onload = () => {};
 
       img.onerror = (error) => {
-        console.error(`Error preloading image ${url}:`, error);
+        console.log(error);
       };
     });
   }
