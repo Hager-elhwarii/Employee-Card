@@ -1,7 +1,7 @@
 <div class="hero min-h-screen">
   <div
     *ngIf="!submittedSuccessfully"
-    class="hero-content flex-col w-full h-full lg:h-auto lg:max-w-[58rem] lg:flex-row justify-between md:gap-10 bg-white shadow-2xl lg:rounded-2xl p-6"
+    class="hero-content flex-col w-full h-full lg:h-auto lg:max-w-[58rem] lg:flex-row justify-between md:gap-10 bg-white shadow-2xl lg:rounded-2xl p-6 border-[1px] border-gray-100"
   >
     <!-- Form Title -->
     <div class="text-center lg:text-center w-full flex-1 items-end">
@@ -46,7 +46,7 @@
               Company name is required
             </div>
             <div
-              class="text-red-dark text-start text-[13px] font-semibold font-poppins leading-[4px]"
+              class="text-red-dark text-start text-[13px] font-semibold font-poppins"
               *ngIf=" (registerForm.get('companyName')?.touched || submitted) &&
               registerForm.get('companyName')?.errors?.['pattern']"
             >
@@ -70,7 +70,7 @@
           />
           <div class="h-3 p-[3px] font-poppins">
             <div
-              class="text-red-dark text-start text-[13px] font-semibold leading-3"
+              class="text-red-dark text-start text-[13px] font-semibold"
               *ngIf=" (registerForm.get('employeeName')?.touched || submitted) &&
               registerForm.get('employeeName')?.errors?.['required']"
             >
@@ -168,11 +168,6 @@
 
         <!-- Submit Button -->
         <div class="form-control mt-6">
-          <!-- <button
-              class="btn text-[15px] border-none bg-red-dark hover:bg-red-lighter capitalize text-[#fff]"
-            >
-              submit
-            </button> -->
           <button class="btn text-[15px] btn-primary capitalize text-white">
             submit
           </button>

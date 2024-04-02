@@ -17,14 +17,7 @@ export class EmployeeCardComponent implements OnInit, OnDestroy {
   constructor() {}
 
   ngOnInit() {
-    console.log({
-      toggle: this.toggleProperty,
-      loaded: this.imageLoaded,
-      Timestamp: Date.now(),
-    });
-    console.log('onInit');
     this.imageLoaded = true;
-    console.log({ afeter: this.imageLoaded, Timestamp: Date.now() });
   }
 
   ngOnDestroy(): void {
