@@ -1,45 +1,34 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { LoaderComponent } from '../loader/loader.component';
 
 @Component({
   selector: 'app-employee-card',
   standalone: true,
-  imports: [EmployeeCardComponent, CommonModule],
+  imports: [EmployeeCardComponent, CommonModule, LoaderComponent],
   templateUrl: './employee-card.component.html',
   styleUrl: './employee-card.component.css',
 })
-export class EmployeeCardComponent implements OnInit {
+export class EmployeeCardComponent implements OnInit, OnDestroy {
   @Input() formData: any;
-
-  imageUrls: string[] = [
-    'https://profile-images.xing.com/images/67d0147185d90af82453e1fe2f49063b-5/erkan-yildirim.1024x1024.jpg',
-    'https://webstockreview.net/images/barcode-clipart-transparent-9.png',
-    'https://iili.io/JwNVywF.png',
-  ];
-
   toggleProperty = false;
+  imageLoaded = false;
 
   constructor() {}
 
   ngOnInit() {
-    this.preloadImages();
+    console.log({
+      toggle: this.toggleProperty,
+      loaded: this.imageLoaded,
+      Timestamp: Date.now(),
+    });
+    console.log('onInit');
+    this.imageLoaded = true;
+    console.log({ afeter: this.imageLoaded, Timestamp: Date.now() });
   }
 
-  preloadImages(): void {
-    // Iterate through the array of image URLs and preload each image
-    this.imageUrls.forEach((url) => {
-      const img = new Image();
-      img.src = url;
-
-      // Optional: Handle onload and onerror events
-      img.onload = () => {
-        console.log(`Image ${url} preloaded successfully.`);
-      };
-
-      img.onerror = (error) => {
-        console.error(`Error preloading image ${url}:`, error);
-      };
-    });
+  ngOnDestroy(): void {
+    this.imageLoaded = false;
   }
 
   toggle() {

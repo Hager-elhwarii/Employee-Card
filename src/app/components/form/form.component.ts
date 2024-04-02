@@ -47,18 +47,15 @@ export class FormComponent implements OnInit {
   }
 
   protected onSubmit(): void {
+    this.submitted = true;
     if (this.registerForm.valid) {
       console.log('form is valid');
-      this.submitted = true;
-
       console.table(this.registerForm.value);
       this.submittedSuccessfully = true;
 
       this.formData = this.registerForm.value;
       console.log(this.formData);
       this.loadImages();
-    } else {
-      console.log('form not valid');
     }
   }
 

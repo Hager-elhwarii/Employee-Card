@@ -1,18 +1,22 @@
 <div class="hero min-h-screen">
   <div
     *ngIf="!submittedSuccessfully"
-    class="hero-content w-full flex flex-col gap-10"
+    class="hero-content flex-col w-full h-full lg:h-auto lg:max-w-[58rem] lg:flex-row justify-between md:gap-10 bg-white shadow-2xl lg:rounded-2xl p-6"
   >
     <!-- Form Title -->
-    <div class="text-center lg:text-center">
-      <h1
-        class="text-xl md:text-2xl lg:text-3xl text-gray-800 font-bold leading-[45px] font-poppins tracking-wider"
-      >
-        Build your own <span class="text-primary">Card!</span>
-      </h1>
+    <div class="text-center lg:text-center w-full flex-1 items-end">
+      <div class="h-full flex items-center justify-center">
+        <h1
+          class="text-xl sm:text-2xl lg:text-3xl text-gray-800 font-bold leading-[45px] font-poppins tracking-wider"
+        >
+          Build your own <span class="text-primary lg:block">Card!</span>
+        </h1>
+      </div>
     </div>
 
-    <div class="card w-full max-w-xl shadow-2xl bg-base-100">
+    <div
+      class="card w-full max-w-[30rem] bg-base-100 -mt-16 sm:-mt-10 lg:-mt-0"
+    >
       <form
         class="card-body"
         [formGroup]="registerForm"
@@ -33,131 +37,131 @@
             class="input input-bordered text-[16px]"
           />
 
-          <div class="h-3 p-[2px] font-poppins">
+          <div class="h-3 p-[3px] font-poppins">
             <div
               class="text-red-dark text-start text-[13px] font-semibold font-poppins"
               *ngIf=" (registerForm.get('companyName')?.touched || submitted) &&
-            registerForm.get('companyName')?.errors?.['required']"
+              registerForm.get('companyName')?.errors?.['required']"
             >
               Company name is required
             </div>
             <div
               class="text-red-dark text-start text-[13px] font-semibold font-poppins leading-[4px]"
               *ngIf=" (registerForm.get('companyName')?.touched || submitted) &&
-            registerForm.get('companyName')?.errors?.['pattern']"
+              registerForm.get('companyName')?.errors?.['pattern']"
             >
               Only alphapetic letters are allowed
             </div>
           </div>
         </div>
 
-        <div class="flex flex-col lg:flex-row gap-4">
-          <!-- Employee Name -->
-          <div class="form-control flex-1">
-            <label class="label">
-              <span class="label-text text-[16px] font-medium font-poppins"
-                >Employee Name</span
-              >
-            </label>
-            <input
-              formControlName="employeeName"
-              type="text"
-              placeholder="Enter employee name"
-              class="input input-bordered text-[16px]"
-            />
-            <div class="h-3 p-[2px] font-poppins">
-              <div
-                class="text-red-dark text-start text-[13px] font-semibold leading-3"
-                *ngIf=" (registerForm.get('employeeName')?.touched || submitted) &&
-            registerForm.get('employeeName')?.errors?.['required']"
-              >
-                Employee name is required
-              </div>
-              <div
-                class="text-red-dark text-start text-[13px] font-semibold"
-                *ngIf=" (registerForm.get('employeeName')?.touched || submitted) &&
-          registerForm.get('employeeName')?.errors?.['pattern']"
-              >
-                Only alphapetic letters are allowed
-              </div>
+        <!-- Employee Name -->
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text text-[16px] font-medium font-poppins"
+              >Employee Name</span
+            >
+          </label>
+          <input
+            formControlName="employeeName"
+            type="text"
+            placeholder="Enter employee name"
+            class="input input-bordered text-[16px]"
+          />
+          <div class="h-3 p-[3px] font-poppins">
+            <div
+              class="text-red-dark text-start text-[13px] font-semibold leading-3"
+              *ngIf=" (registerForm.get('employeeName')?.touched || submitted) &&
+              registerForm.get('employeeName')?.errors?.['required']"
+            >
+              Employee name is required
+            </div>
+            <div
+              class="text-red-dark text-start text-[13px] font-semibold"
+              *ngIf=" (registerForm.get('employeeName')?.touched || submitted) &&
+            registerForm.get('employeeName')?.errors?.['pattern']"
+            >
+              Only alphapetic letters are allowed
             </div>
           </div>
-          <!-- Email -->
-          <div class="form-control flex-1">
-            <label class="label">
-              <span class="label-text text-[16px] font-medium font-poppins"
-                >Email</span
-              >
-            </label>
-            <input
-              formControlName="email"
-              type="email"
-              placeholder="Enter email"
-              class="input input-bordered text-[16px]"
-            />
-            <div class="h-3 p-[2px] font-poppins">
-              <div
-                class="text-red-dark text-start text-[13px] font-semibold"
-                *ngIf=" (registerForm.get('email')?.touched || submitted) &&
-            registerForm.get('email')?.errors?.['required']"
-              >
-                Email is required
-              </div>
-              <div
-                class="text-red-dark text-start text-[13px] font-semibold"
-                *ngIf=" (registerForm.get('email')?.touched || submitted) &&
-            registerForm.get('email')?.errors?.['email']"
-              >
-                Email format is not valid
-              </div>
+        </div>
+        <!-- Email -->
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text text-[16px] font-medium font-poppins"
+              >Email</span
+            >
+          </label>
+          <input
+            formControlName="email"
+            type="email"
+            placeholder="Enter email"
+            class="input input-bordered text-[16px]"
+          />
+          <div class="h-3 p-[3px] font-poppins">
+            <div
+              class="text-red-dark text-start text-[13px] font-semibold"
+              *ngIf=" (registerForm.get('email')?.touched || submitted) &&
+              registerForm.get('email')?.errors?.['required']"
+            >
+              Email is required
+            </div>
+            <div
+              class="text-red-dark text-start text-[13px] font-semibold"
+              *ngIf=" (registerForm.get('email')?.touched || submitted) &&
+              registerForm.get('email')?.errors?.['email']"
+            >
+              Email format is not valid
             </div>
           </div>
         </div>
 
-        <!-- ID Number -->
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text text-[16px] font-medium font-poppins"
-              >ID Number</span
-            >
-          </label>
-          <input
-            formControlName="idNumber"
-            type="number"
-            placeholder="Enter ID number"
-            class="input input-bordered text-[16px]"
-          />
-          <div class="h-3 p-[2px] font-poppins">
-            <div
-              class="text-red-dark text-start text-[13px] font-semibold font-poppins"
-              *ngIf=" (registerForm.get('idNumber')?.touched || submitted) &&
-            registerForm.get('idNumber')?.errors?.['required']"
-            >
-              ID number is required
+        <div class="flex flex-col lg:flex-row gap-3">
+          <!-- ID Number -->
+          <div class="form-control flex-1">
+            <label class="label">
+              <span class="label-text text-[16px] font-medium font-poppins"
+                >ID Number</span
+              >
+            </label>
+            <input
+              formControlName="idNumber"
+              type="number"
+              placeholder="Enter ID number"
+              class="input input-bordered text-[16px]"
+            />
+            <div class="h-3 p-[3px] font-poppins">
+              <div
+                class="text-red-dark text-start text-[13px] font-semibold font-poppins"
+                *ngIf=" (registerForm.get('idNumber')?.touched || submitted) &&
+              registerForm.get('idNumber')?.errors?.['required']"
+              >
+                ID number is required
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Date of Birth -->
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text text-[16px] font-medium font-poppins"
-              >Date of Birth</span
-            >
-          </label>
-          <input
-            formControlName="dateOfBirth"
-            type="date"
-            placeholder="DOB"
-            class="input input-bordered text-[16px]"
-          />
-          <div class="h-3 p-[2px] font-poppins">
-            <div
-              class="text-red-dark text-start text-[13px] font-semibold font-poppins"
-              *ngIf=" (registerForm.get('dateOfBirth')?.touched || submitted) &&
-            registerForm.get('dateOfBirth')?.errors?.['required']"
-            >
-              Date of birth is required
+          <!-- Date of Birth -->
+          <div class="form-control flex-1">
+            <label class="label">
+              <span class="label-text text-[16px] font-medium font-poppins"
+                >Date of Birth</span
+              >
+            </label>
+            <input
+              formControlName="dateOfBirth"
+              type="date"
+              placeholder="DOB"
+              class="input input-bordered text-[16px]"
+            />
+            <div class="h-3 p-[3px] font-poppins">
+              <div
+                class="text-red-dark text-start text-[13px] font-semibold font-poppins"
+                *ngIf=" (registerForm.get('dateOfBirth')?.touched || submitted) &&
+              registerForm.get('dateOfBirth')?.errors?.['required']"
+              >
+                Date of birth is required
+              </div>
             </div>
           </div>
         </div>
@@ -165,10 +169,10 @@
         <!-- Submit Button -->
         <div class="form-control mt-6">
           <!-- <button
-            class="btn text-[15px] border-none bg-red-dark hover:bg-red-lighter capitalize text-[#fff]"
-          >
-            submit
-          </button> -->
+              class="btn text-[15px] border-none bg-red-dark hover:bg-red-lighter capitalize text-[#fff]"
+            >
+              submit
+            </button> -->
           <button class="btn text-[15px] btn-primary capitalize text-white">
             submit
           </button>
