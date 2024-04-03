@@ -3,7 +3,9 @@
     *ngIf="!submittedSuccessfully"
     class="hero-content flex-col w-full h-full lg:h-auto lg:max-w-[58rem] lg:flex-row justify-between md:gap-10 bg-white shadow-2xl lg:rounded-2xl p-6 border-[1px] border-gray-100"
   >
-    <div class="text-center lg:text-center w-full flex-1 items-end">
+    <div
+      class="text-center lg:text-center w-full flex-1 hidden sm:block items-end"
+    >
       <!-- Form Title -->
       <div class="h-full flex items-center justify-center">
         <h1
@@ -14,9 +16,7 @@
       </div>
     </div>
 
-    <div
-      class="card w-full max-w-[30rem] bg-base-100 -mt-16 sm:-mt-10 lg:-mt-0"
-    >
+    <div class="card w-full max-w-[30rem] sm:-mt-10 lg:-mt-0">
       <form
         class="card-body"
         [formGroup]="registerForm"
