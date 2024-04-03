@@ -25,7 +25,7 @@
         <!-- Company Name -->
         <div class="form-control">
           <label class="label">
-            <span class="label-text text-[16px] font-medium font-poppins"
+            <span class="label-text sm:text-[16px] font-medium font-poppins"
               >Company Name</span
             >
           </label>
@@ -35,19 +35,19 @@
             formControlName="companyName"
             type="text"
             placeholder="Enter company name"
-            class="input input-bordered text-[16px]"
+            class="input input-bordered sm:text-[16px]"
           />
 
-          <div class="h-3 p-[3px] font-poppins">
+          <div class="h-1 sm:h-3 sm:p-[3px] font-poppins">
             <div
-              class="text-red-dark text-start text-[13px] font-semibold font-poppins"
+              class="text-red-dark text-start text-[10px] sm:text-[13px] font-semibold font-poppins"
               *ngIf=" (registerForm.get('companyName')?.touched || submitted) &&
               registerForm.get('companyName')?.errors?.['required']"
             >
               Company name is required
             </div>
             <div
-              class="text-red-dark text-start text-[13px] font-semibold font-poppins"
+              class="text-red-dark text-start text-[10px] sm:text-[13px] font-semibold font-poppins"
               *ngIf=" (registerForm.get('companyName')?.touched || submitted) &&
               registerForm.get('companyName')?.errors?.['pattern']"
             >
@@ -59,7 +59,7 @@
         <!-- Employee Name -->
         <div class="form-control">
           <label class="label">
-            <span class="label-text text-[16px] font-medium font-poppins"
+            <span class="label-text sm:text-[16px] font-medium font-poppins"
               >Employee Name</span
             >
           </label>
@@ -70,9 +70,9 @@
             placeholder="Enter employee name"
             class="input input-bordered text-[16px]"
           />
-          <div class="h-3 p-[3px] font-poppins">
+          <div class="h-1 sm:h-3 sm:p-[3px] font-poppins">
             <div
-              class="text-red-dark text-start text-[13px] font-semibold"
+              class="text-red-dark text-start text-[10px] sm:text-[13px] font-semibold"
               *ngIf=" (registerForm.get('employeeName')?.touched || submitted) &&
               registerForm.get('employeeName')?.errors?.['required']"
             >
@@ -91,7 +91,7 @@
         <!-- Email -->
         <div class="form-control">
           <label class="label">
-            <span class="label-text text-[16px] font-medium font-poppins"
+            <span class="label-text sm:text-[16px] font-medium font-poppins"
               >Email</span
             >
           </label>
@@ -101,16 +101,16 @@
             placeholder="Enter email"
             class="input input-bordered text-[16px]"
           />
-          <div class="h-3 p-[3px] font-poppins">
+          <div class="h-1 sm:h-3 sm:p-[3px] font-poppins">
             <div
-              class="text-red-dark text-start text-[13px] font-semibold"
+              class="text-red-dark text-start text-[10px] sm:text-[13px] font-semibold"
               *ngIf=" (registerForm.get('email')?.touched || submitted) &&
               registerForm.get('email')?.errors?.['required']"
             >
               Email is required
             </div>
             <div
-              class="text-red-dark text-start text-[13px] font-semibold"
+              class="text-red-dark text-start text-[10px] sm:text-[13px] font-semibold"
               *ngIf=" (registerForm.get('email')?.touched || submitted) &&
               registerForm.get('email')?.errors?.['email']"
             >
@@ -123,7 +123,7 @@
           <!-- ID Number -->
           <div class="form-control flex-1">
             <label class="label">
-              <span class="label-text text-[16px] font-medium font-poppins"
+              <span class="label-text sm:text-[16px] font-medium font-poppins"
                 >ID Number</span
               >
             </label>
@@ -133,9 +133,9 @@
               placeholder="Enter ID number"
               class="input input-bordered text-[16px]"
             />
-            <div class="h-3 p-[3px] font-poppins">
+            <div class="h-1 sm:h-3 sm:p-[3px] font-poppins">
               <div
-                class="text-red-dark text-start text-[13px] font-semibold font-poppins"
+                class="text-red-dark text-start text-[10px] sm:text-[13px] font-semibold font-poppins"
                 *ngIf=" (registerForm.get('idNumber')?.touched || submitted) &&
               registerForm.get('idNumber')?.errors?.['required']"
               >
@@ -147,7 +147,7 @@
           <!-- Date of Birth -->
           <div class="form-control flex-1">
             <label class="label">
-              <span class="label-text text-[16px] font-medium font-poppins"
+              <span class="label-text md:text-[16px] font-medium font-poppins"
                 >Date of Birth</span
               >
             </label>
@@ -155,11 +155,11 @@
               formControlName="dateOfBirth"
               type="date"
               placeholder="DOB"
-              class="input input-bordered text-[16px]"
+              class="input input-bordered text-[16px] w-full"
             />
-            <div class="h-3 p-[3px] font-poppins">
+            <div class="h-1 sm:h-3 sm:p-[3px] font-poppins">
               <div
-                class="text-red-dark text-start text-[13px] font-semibold font-poppins"
+                class="text-red-dark text-start text-[10px] sm:text-[13px] font-semibold font-poppins"
                 *ngIf=" (registerForm.get('dateOfBirth')?.touched || submitted) &&
               registerForm.get('dateOfBirth')?.errors?.['required']"
               >
@@ -170,7 +170,7 @@
         </div>
 
         <!-- Submit Button -->
-        <div class="form-control mt-6">
+        <div class="form-control mt-2 sm:mt-6">
           <button class="btn text-[15px] btn-primary capitalize text-white">
             submit
           </button>
