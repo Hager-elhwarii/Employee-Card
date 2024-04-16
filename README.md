@@ -25,7 +25,7 @@
 - Typescript
 - Angular
 - Tailwindcss
-- Daisyui
+- DaisyUI
 - Figma
 
 ##  🔐 Run locally 
