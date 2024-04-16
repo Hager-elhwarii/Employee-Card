@@ -22,9 +22,9 @@
 ## 💻 Tech stack
 - Html
 - CSS
-- Typescript
+- TypeScript
 - Angular
-- Tailwindcss
+- TailwindCss
 - DaisyUI
 - Figma
 
